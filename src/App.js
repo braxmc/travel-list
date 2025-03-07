@@ -24,6 +24,13 @@ function App() {
     );
   }
 
+  function handleDeleteAllItems() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+    if (confirmed) setItems([]);
+  }
+
   return (
     <div className="App">
       <Logo />
@@ -32,6 +39,7 @@ function App() {
         items={items}
         onDeleteItem={handleDeleteItems}
         onToggleItem={handleToggleItem}
+        onDeleteAllItems={handleDeleteAllItems}
       />
       <Stats items={items} />
     </div>
